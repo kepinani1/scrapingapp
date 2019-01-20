@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
 mongoose.connect('mongodb://heroku_gpb7rsn0:hh8nehvpfkpsl4p0lm6e9dcmua@ds159164.mlab.com:59164/heroku_gpb7rsn0');
-
+// mongoose.connect('mongodb://localhost/scrapingapp');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
