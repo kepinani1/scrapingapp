@@ -21,10 +21,8 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapingapp";
-
-mongoose.connect(MONGODB_URI);
+//connecting to MongoDB
+mongoose.connect('mongodb://heroku_gpb7rsn0:567n8hdkd77kkwonderfull@ds159164.mlab.com:59164/heroku_gpb7rsn0');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
