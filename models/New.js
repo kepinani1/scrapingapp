@@ -12,10 +12,10 @@ var NewSchema = new Schema({
     required: true
   },
   //Could not scrape images so I commented out the below. However, if scrapping was successful, the below should have worked.
-  img: {
-    type: { data: Buffer, contentType: String },
-    required: true
-  },
+  // img: {
+  //   type: { data: Buffer, contentType: String },
+  //   required: true
+  // },
   input: [{
     type: Schema.Types.ObjectId,
     ref: "Input"

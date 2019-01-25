@@ -151,7 +151,7 @@ router.get('/readNews/:id', function(req, res){
     });
 });
 
-// Create a new comment
+//Creating new user inputs
 router.post('/input/:id', function(req, res) {
   var user = req.body.name;
   var content = req.body.input;
@@ -163,7 +163,7 @@ router.post('/input/:id', function(req, res) {
     body: content
   };
  
-  //using the Input model, create a new comment from user
+  //using the Input model, create a new inputs from user
   var newInput = new Input(inputObj);
 
   newInput.save(function(err, doc) {
