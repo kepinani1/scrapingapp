@@ -22,8 +22,14 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-mongoose.connect('mongodb://heroku_gpb7rsn0:hh8nehvpfkpsl4p0lm6e9dcmua@ds159164.mlab.com:59164/heroku_gpb7rsn0');
+// mongoose.connect('mongodb://heroku_gpb7rsn0:hh8nehvpfkpsl4p0lm6e9dcmua@ds159164.mlab.com:59164/heroku_gpb7rsn0');
 // mongoose.connect('mongodb://localhost/scrapingapp');
+
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapingapp";
+
+mongoose.connect(MONGODB_URI);
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
